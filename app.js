@@ -15,7 +15,9 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/question", askqueastionroutes);
 app.use("/api/answer", answerquestions);
-
+app.get("/",(req, res)=>{
+	res.send("Welcome to our API");
+})
 async function start() {
 	try {
 		const [rows] = await dbconnection.execute("SELECT 'test' AS result");
